@@ -1,0 +1,26 @@
+PROJECT #1
+
+Milestone 1:
+[ ] Initial setup
+- Html, css, js
+- Create repo + upload to GitHub 
+
+[ ] Create player class
+- Width
+- Height
+- PositionX
+- PositionY
+- moveRight()
+- moveLeft()
+
+[ ] Add event listeners
+
+
+Milestone 2: obstacles appearing + obstacles move
+
+
+Milestone 3: detect if there’s a collision
+
+
+
+
