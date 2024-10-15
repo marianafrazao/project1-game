@@ -5,7 +5,7 @@ Milestone 1:
 - Html, css, js
 - Create repo + upload to GitHub 
 
-[ ] Create player class
+[x] Create player class
 - Width
 - Height
 - PositionX
@@ -13,16 +13,49 @@ Milestone 1:
 - moveRight()
 - moveLeft()
 
-[ ] Draw player + allow player movement
-[ ] Add event listeners
+[x] Draw player + allow player movement
 
+
+[x] Add event listeners
 
 
 Milestone 2: obstacles appearing + obstacles move
 
+[x] Create obstacle class
+- Width
+- Height
+- PositionX
+- PositionY
+- createDomElement
+- moveUp()
+- moveDown() (after reaching top)
+
+[x] create 5 obstacles
+
+[x]
+- speed
+- gravity??
+
+[x]
+- diagonal direction
+
 
 Milestone 3: detect if there’s a collision
 
+[x] 
+- move up if there's a collision between monkey and trampoline
+- die if monkey reaches bottom
 
+[ ]
+- create counter of monkeys, start with 5
+- when reach 0, game over
 
+[ ]
+- create game over page
 
+[ ] increase difficulty
+- cada vez que o counter descer um número, a velocidade dos macacos aumenta
+
+[ ]
+- improve style
+- melhorar colisão entre trampolim e macacos

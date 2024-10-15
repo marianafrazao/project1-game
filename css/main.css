@@ -10,7 +10,12 @@ body {
     position: relative;
 }
 
-#player{
-    background-color: grey;
+#trampoline{
+    background-color: rgb(35, 2, 255);
+    position: absolute;
+}
+
+.monkey{
+    background-color: rgb(118, 57, 11);
     position: absolute;
 }
