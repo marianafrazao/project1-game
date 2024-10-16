@@ -8,7 +8,8 @@ body {
     height: 100vh;
     width: 100vw;
     position: relative;
-    background-image: url(../Empty\ Room\ View\ Professional\ Name\ Zoom\ Virtual\ Background.png);
+    background-image: url(./Empty\ Room\ View\ Professional\ Name\ Zoom\ Virtual\ Background.png);
+    background-size: cover;
 }
 
 #trampoline{
@@ -19,4 +20,17 @@ body {
 .monkey{
     background-color: rgb(118, 57, 11);
     position: absolute;
+}
+
+.counter-display{
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    bottom: 92vh;
+    left: 2vw;
+}
+
+#page-gameover{
+    text-align: center;
+    background-color: blue;
 }
