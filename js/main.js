@@ -126,7 +126,7 @@ function updateDisplayPoints() {
 updateDisplayPoints();
 
 //set intervals of monkeys jumps
-const intervals = [40, 50, 60, 70, 80];
+const intervals = [40, 50, 60, 70, 30];
 
 //make monkeys jump and game over
 monkeys.forEach((monkey, index) => {
@@ -152,6 +152,7 @@ monkeys.forEach((monkey, index) => {
             updateDisplayCounter();
         } else if (counter === 0) {
             //gameover
+            localStorage.setItem('finalScore', numberOfPoints);
             location.href = "gameover.html"
         }
     }, intervals[index]);

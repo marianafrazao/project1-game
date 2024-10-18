@@ -10,8 +10,19 @@
 <body id="page-gameover">
     <h1>GAME OVER</h1>
     <h1>No more monkeys jumping!</h1>
-    <!-- <h1> You got  points</h1>
-    <h1 class="points-display"></h1> -->
+
+    <div class="final-score-display">Points: 0</div>
+    <script>
+        const finalScore = localStorage.getItem('finalScore');
+
+        const scoreDisplay = document.querySelector('.final-score-display');
+        if (finalScore !== null) {
+            scoreDisplay.textContent = `Total points: ${finalScore}`;
+        }
+    </script>
+
+    <h1>                                    </h1>
+
 
     <a href="./index.html"><strong>Play again</strong></a>
 </body>

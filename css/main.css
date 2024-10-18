@@ -61,28 +61,32 @@ body {
 
 
 #page-gameover{
-    text-align: center;
-    color: white;
-    font-family:fantasy;
     height: 100vh;
     width: 100vw;
     position: relative;
     background-image: url(../monkey-gameover.png), url(../5334280.jpg);
-    background-repeat: no-repeat, no-repeat;
-    background-position: 50vh, cover;
     background-size: 30vh, cover;
     overflow: hidden;
+    text-align: center;
+    color: white;
+    font-family:fantasy;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 50vh, cover;
 }
-
 
 h1{
     font-size: 2vw;
 }
 
+.final-score-display{
+    font-size: 2vw;
+}
+
+
+
 a{
-    color: white;
+    color: rgb(1, 77, 1);
     font-weight: bold;
     font-size: 2vw;
-    
 }
     
