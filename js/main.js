@@ -3,7 +3,7 @@ class Trampoline {
         this.width = 20;
         this.height = 10;
         this.positionX = 50 - this.width / 2;
-        this.positionY = -3;
+        this.positionY = 0;
         this.domElement = null;
 
         this.createDomElement();
@@ -70,7 +70,7 @@ class Monkey {
         } else if (this.positionY > (100 - this.height)) {
             if (this.speedY < 12) {
                 this.speedY *= -1.3;
-                this.speedX *= 1.1;
+                this.speedX *= 1.2;
                 numberOfPoints++
                 updateDisplayPoints();
             } else {
