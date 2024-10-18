@@ -1,9 +1,9 @@
 class Trampoline {
     constructor() {
         this.width = 20;
-        this.height = 5;
+        this.height = 10;
         this.positionX = 50 - this.width / 2;
-        this.positionY = 0
+        this.positionY = -3;
         this.domElement = null;
 
         this.createDomElement();
@@ -22,16 +22,16 @@ class Trampoline {
         board.appendChild(this.domElement)
     }
     moveRight() {
-        if(this.positionX < 100 - this.width){
-        this.positionX += 5
-        this.domElement.style.left = this.positionX + "vw"
+        if (this.positionX < 100 - this.width) {
+            this.positionX += 7
+            this.domElement.style.left = this.positionX + "vw"
         }
     }
     moveLeft() {
-        if(this.positionX > 0){
-            this.positionX -= 5
+        if (this.positionX > 0) {
+            this.positionX -= 7
             this.domElement.style.left = this.positionX + "vw"
-        }     
+        }
     }
 }
 
@@ -44,7 +44,7 @@ class Monkey {
         this.positionY = trampoline.height;
         this.directionX = Math.random() < 0.5 ? 1 : -1;
         this.speedX = 1;
-        this.speedY = 3;
+        this.speedY = 1.5;
         this.domElement = null;
 
         this.createDomElement();
@@ -65,11 +65,20 @@ class Monkey {
     monkeyJump() {
         this.positionY += this.speedY;
         this.positionX += this.speedX * this.directionX;
-        if (this.positionX >= (100-this.width) || this.positionX <= 0) {
+        if (this.positionX >= (100 - this.width) || this.positionX <= 0) {
             this.directionX *= -1;
-        } else if (this.positionY >= (100-this.height)) {
-            this.speedY *= -1;
-        } 
+        } else if (this.positionY > (100 - this.height)) {
+            if (this.speedY < 12) {
+                this.speedY *= -1.3;
+                this.speedX *= 1.1;
+                numberOfPoints++
+                updateDisplayPoints();
+            } else {
+                this.speedY *= -1;
+                numberOfPoints++
+                updateDisplayPoints();
+            }
+        }
         this.domElement.style.left = this.positionX + "vw";
         return this.domElement.style.bottom = this.positionY + "vh";
     }
@@ -88,58 +97,62 @@ document.addEventListener('keydown', (e) => {
 });
 
 //create 5 monkeys
-const monkeys = Array.from({ length: 5 }, () => new Monkey()); 
+const monkeys = Array.from({ length: 5 }, () => new Monkey());
 
 //create counter of monkeys still in game 
 //set counter based on the number of monkeys
-let counter = monkeys.length; 
-console.log(counter);
+let counter = monkeys.length;
 
 //display the counter
 const displayCounter = document.querySelector(".counter-display");
 displayCounter.positionX = 0;
 displayCounter.positionY = 0;
-function updateDisplayCounter(){
-    displayCounter.innerText = `Monkeys left: ${counter}`;
+function updateDisplayCounter() {
+    displayCounter.innerText = `Monkeys left: ${counter} `;
 }
 updateDisplayCounter();
 
-//set intervals of monkeys jumps
-const intervals = [40, 90, 70, 100, 50]; 
 
-//make monkeys jump
+//create counter of points
+let numberOfPoints = 0;
+
+//display the points
+const displayPoints = document.querySelector(".points-display");
+displayPoints.positionX = 0;
+displayPoints.positionY = 0;
+function updateDisplayPoints() {
+    displayPoints.innerText = `Points: ${numberOfPoints} `;
+}
+updateDisplayPoints();
+
+//set intervals of monkeys jumps
+const intervals = [40, 50, 60, 70, 80];
+
+//make monkeys jump and game over
 monkeys.forEach((monkey, index) => {
     setInterval(() => {
         monkey.monkeyJump();
         if (
+            //collision
             trampoline.positionX < monkey.positionX + monkey.width &&
             trampoline.positionX + trampoline.width > monkey.positionX &&
             trampoline.positionY < monkey.positionY + monkey.height &&
             trampoline.positionY + trampoline.height > monkey.positionY
         ) {
-            //console.log("jump again");
+            //jump again
             monkey.speedY *= -1;
             monkey.monkeyJump();
         } else if (monkey.positionY < -8) {
             //fall
-            monkey.domElement = null;
+            monkey.positionY = -8;
+            monkey.positionX = 0;
+            monkey.speedX = 0;
+            monkey.speedY = 0;
             counter--;
             updateDisplayCounter();
-
-            if (counter > 0) {
-                // increase monkey speed
-                console.log("......incREASE SPEED FOR ALL M........");
-
-                monkeys.forEach((element) => {
-                    if (element.speedY >= 0) {
-                        element.speedY += 4;
-                    } else if (element.speedY <= 0);
-                        element.speedY -= 4;
-                });
-            } else {
-                // gameover
-                location.href = "gameover.html"
-            }
+        } else if (counter === 0) {
+            //gameover
+            location.href = "gameover.html"
         }
     }, intervals[index]);
 }

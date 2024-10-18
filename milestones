@@ -54,16 +54,22 @@ Milestone 3: collision
 - create game over page
 
 
-[ ] increase difficulty
+[x] increase difficulty
 - cada vez que o counter descer um número, a velocidade dos macacos aumenta
+- update: cada vez que um macaco toca no tecto, com um limite de velocidade para não ficar impossível de jogar
 
 
-[ ]
+[x]
 - improve style
 
 [ ]
 - melhorar colisão entre trampolim e macacos
 
+[x]
+- add a counter of points, to see how many times the monkeys touched the ceiling
 
 [x]
 - impedir trampolim de sair do ecrã
+
+[ ]
+- add start button and music

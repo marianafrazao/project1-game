@@ -8,29 +8,81 @@ body {
     height: 100vh;
     width: 100vw;
     position: relative;
-    background-image: url(./Empty\ Room\ View\ Professional\ Name\ Zoom\ Virtual\ Background.png);
+    background-image: url(/5334280.jpg);
     background-size: cover;
+    overflow: hidden;
 }
 
 #trampoline{
-    background-color: rgb(35, 2, 255);
+    background-color: transparent;
     position: absolute;
+    background-image: url(/trampoline1.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    filter: contrast(2.5);
 }
 
 .monkey{
-    background-color: rgb(118, 57, 11);
+    background-color: transparent;
     position: absolute;
+    background-image: url(/monkey-jumping.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    filter:drop-shadow(2);
+    -webkit-animation: spin 4s infinite linear;
+}
+
+@-webkit-keyframes spin {
+	0%  {-webkit-transform: rotate(0deg);}
+	100% {-webkit-transform: rotate(360deg);}	
 }
 
 .counter-display{
-    background-color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: transparent;
+    color: white;
+    font-family: fantasy;
+    font-size: 2vw;
     position: absolute;
-    bottom: 92vh;
+    bottom: 91vh;
     left: 2vw;
 }
 
+.points-display{
+    background-color: transparent;
+    color: white;
+    font-family: fantasy;
+    font-size: 2vw;
+    position: absolute;
+    bottom: 81vh;
+    left: 2vw;
+}
+
+
 #page-gameover{
     text-align: center;
-    background-color: blue;
+    color: white;
+    font-family:fantasy;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-image: url(/monkey-gameover.png), url(/5334280.jpg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 50vh, cover;
+    background-size: 30vh, cover;
+    overflow: hidden;
 }
+
+
+h1{
+    font-size: 2vw;
+}
+
+a{
+    color: white;
+    font-weight: bold;
+    font-size: 2vw;
+    
+}
+    
