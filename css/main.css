@@ -1,92 +1,96 @@
+#trampoline,
+.monkey {
+    background-repeat: no-repeat;
+    background-position-x: center
+}
+
+.counter-display,
+.points-display {
+    left: 2vw;
+    font-size: 2vw
+}
+
+#board,
+#page-gameover {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden
+}
+
+#page-gameover,
+.counter-display,
+.points-display {
+    color: #fff;
+    font-family: fantasy
+}
+
+.final-score-display,
+.points-display,
+a,
+h1 {
+    font-size: 2vw
+}
+
 body {
     margin: 0;
     padding: 0;
-    background: rgb(215, 240, 249);
+    background: #d7f0f9
 }
 
-#board{
-    height: 100vh;
-    width: 100vw;
-    position: relative;
+#board {
     background-image: url(../5334280.jpg);
-    background-size: cover;
-    overflow: hidden;
+    background-size: cover
 }
 
-#trampoline{
+#trampoline,
+.counter-display,
+.monkey,
+.points-display {
     background-color: transparent;
-    position: absolute;
+    position: absolute
+}
+
+#trampoline {
     background-image: url(../trampoline1.2.png);
     background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    filter: contrast(2.5);
+    filter: contrast(2.5)
 }
 
-.monkey{
-    background-color: transparent;
-    position: absolute;
+.monkey {
     background-image: url(../monkey-jumping.png);
     background-size: contain;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    filter:drop-shadow(2);
-    -webkit-animation: spin 4s infinite linear;
+    filter: drop-shadow(2);
+    -webkit-animation: 4s linear infinite spin
 }
 
 @-webkit-keyframes spin {
-	0%  {-webkit-transform: rotate(0deg);}
-	100% {-webkit-transform: rotate(360deg);}	
+    0% {
+        -webkit-transform: rotate(0)
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
 }
 
-.counter-display{
-    background-color: transparent;
-    color: white;
-    font-family: fantasy;
-    font-size: 2vw;
-    position: absolute;
-    bottom: 87vh;
-    left: 2vw;
+.counter-display {
+    bottom: 87vh
 }
 
-.points-display{
-    background-color: transparent;
-    color: white;
-    font-family: fantasy;
-    font-size: 2vw;
-    position: absolute;
-    bottom: 79vh;
-    left: 2vw;
+.points-display {
+    bottom: 79vh
 }
 
-
-#page-gameover{
-    height: 100vh;
-    width: 100vw;
-    position: relative;
+#page-gameover {
     background-image: url(../monkey-gameover.png), url(../5334280.jpg);
     background-size: 30vh, cover;
-    overflow: hidden;
     text-align: center;
-    color: white;
-    font-family:fantasy;
     background-repeat: no-repeat, no-repeat;
-    background-position: 50vh, cover;
+    background-position: 50vh, cover
 }
 
-h1{
-    font-size: 2vw;
+a {
+    color: #014d01;
+    font-weight: 700
 }
-
-.final-score-display{
-    font-size: 2vw;
-}
-
-
-
-a{
-    color: rgb(1, 77, 1);
-    font-weight: bold;
-    font-size: 2vw;
-}
-    

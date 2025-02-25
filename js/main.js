@@ -23,13 +23,13 @@ class Trampoline {
     }
     moveRight() {
         if (this.positionX < 100 - this.width) {
-            this.positionX += 7
+            this.positionX += 10
             this.domElement.style.left = this.positionX + "vw"
         }
     }
     moveLeft() {
         if (this.positionX > 0) {
-            this.positionX -= 7
+            this.positionX -= 10
             this.domElement.style.left = this.positionX + "vw"
         }
     }
